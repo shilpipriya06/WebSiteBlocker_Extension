@@ -1,0 +1,29 @@
+{
+    "name":"Website Blocker",
+    "description":"Website Blocker description",
+    "version":"0.0.1",
+    "manifest_version":3,
+
+    "action":{
+        "default_popup":"./popup.html"
+
+    },
+
+    "content_scripts":[
+        {
+        "matches":["<all_urls>"],
+        "css":["contentScript.js"],
+        "js":["contentScript.js"]
+    }
+],
+"background":{
+    "service_worker":"background.js"
+},
+"permissions":["tabs","activeTab","storage"],
+
+"host_permissions":[
+    "<all_urls>"
+]
+}
+
+
